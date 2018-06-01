@@ -1,7 +1,8 @@
 from django.urls import path
-from . import views
+from django.conf.urls import url
+from api import views
 
 
 urlpatterns=[
-	path('', views.index, name='index'),	
+	url(r'^$', views.QuestionList.as_view()),
 ]
