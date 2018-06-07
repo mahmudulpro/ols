@@ -1,0 +1,14 @@
+{% extends "api/base.html" %} 
+
+{% block title %} Profile {% endblock %} 
+
+{% block content %}
+        <ul>
+            {% for user in users %}
+
+            <li>User name : {{ user.username }}</li>
+            <li>User email: {{ user.email }}</li>
+            
+            {% endfor %}
+        </ul>
+{% endblock %}

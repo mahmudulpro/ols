@@ -1,8 +1,10 @@
 from django.urls import path
 from django.conf.urls import url
-from api import views
+from api import views 
 
-
+app_name = 'api'
 urlpatterns=[
-	url(r'^$', views.QuestionList.as_view()),
+	
+	path('', views.QuestionList.as_view(), name='index'),
+	path('profile/', views.ProfileList.as_view(), name='profile'),
 ]

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from api.models import Question, Choice
-
+from django.contrib.auth.models import User
 
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
@@ -12,4 +12,7 @@ class ChoiceSerializer(serializers.ModelSerializer):
         model = Choice
         fields = ('id', 'question', 'choice_text', 'votes')         
 
-
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'username', 'email', 'groups')
